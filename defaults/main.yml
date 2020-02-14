@@ -1,4 +1,3 @@
-# roles/account/defaults/main.yml
 ---
 openio_account_namespace: "{{ namespace | default('OPENIO') }}"
 openio_account_serviceid: "{{ 0 + openio_legacy_serviceid | d(0) | int }}"
@@ -50,4 +49,12 @@ openio_account_slots:
   "{{ [ openio_account_type, openio_account_type ~ '-' ~ openio_account_location.split('.')[:-2] | join('-') ] \
   if openio_account_location.split('.') | length > 2 \
   else [ openio_account_type ] }}"
+
+openio_account_sysconfig_dir: "/etc/oio/sds/{{ openio_account_namespace }}"
+openio_account_servicename: "account-{{ openio_account_serviceid }}"
+openio_account_type: account
+
+openio_account_definition_file: >
+  "{{ openio_account_sysconfig_dir }}/
+  {{ openio_account_servicename }}/{{ openio_account_servicename }}.conf"
 ...
