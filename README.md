@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/open-io/ansible-role-openio-account.svg?branch=master)](https://travis-ci.org/open-io/ansible-role-openio-account)
+[![Build Status](https://travis-ci.org/open-io/ansible-role-openio-account.svg?branch=20.04)](https://travis-ci.org/open-io/ansible-role-openio-account)
 # Ansible role `account`
 
 An Ansible role for install and configure a servicetype account.
